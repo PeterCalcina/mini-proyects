@@ -271,7 +271,9 @@ function render() {
     }, 280);
   };
 
-  okBtn.addEventListener("pointerenter", dodge);
+  okBtn.addEventListener("pointerenter", (ev) => {
+    if (ev.pointerType !== "touch") dodge(ev);
+  });
   okBtn.addEventListener(
     "pointerdown",
     (ev) => {
