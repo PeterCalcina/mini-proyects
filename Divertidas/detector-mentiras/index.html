@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#07140f" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <title>Detector de Mentiras</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500&family=Space+Grotesk:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/motion.css" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <!-- Secreto en celular: mantener 1s la esquina inferior derecha. En PC: tecla K. -->
+    <!-- ?nombre=Brisa&otro=Yo&culpable=Yo -->
+  </head>
+  <body>
+    <div class="secret-pad" id="secretPad" title=""></div>
+    <main class="panel rise">
+      <header>
+        <p class="brand">POLYGRAPH · TÚ vs YO v2.4</p>
+        <h1 id="title">Detector de Mentiras</h1>
+        <p id="lead" class="lead"></p>
+      </header>
+
+      <form id="setup" class="setup">
+        <label>Tú<input id="yo" name="yo" autocomplete="off" inputmode="text" required /></label>
+        <label>Yo<input id="otro" name="otro" autocomplete="off" inputmode="text" required /></label>
+        <button type="submit">Calibrar sensor</button>
+      </form>
+
+      <form id="quiz" class="quiz" hidden></form>
+      <section id="scan" class="scan" hidden>
+        <p id="scanText">Analizando microexpresiones…</p>
+        <div class="wave" id="wave"></div>
+        <p class="pct" id="pct">0%</p>
+      </section>
+      <section id="verdict" class="verdict" hidden></section>
+    </main>
+    <script src="js/script.js"></script>
+  </body>
+</html>

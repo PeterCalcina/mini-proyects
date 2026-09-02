@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#2b2140" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <title>¿Qué hacemos?</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600&family=Nunito:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/motion.css" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <!-- ?nombre=Brisa&postre=brownie&serie=Friends&comida=sushi&cancion=esa -->
+  </head>
+  <body>
+    <main class="rise">
+      <p class="kicker" id="greet"></p>
+      <h1>No tienes que decidirlo todo.</h1>
+      <p class="lead">Desliza. Derecha = eso. Izquierda = otra cosa.</p>
+
+      <div class="deck" id="deck"></div>
+      <div class="hint" id="hint">← otra &nbsp;&nbsp; eso →</div>
+      <div class="btns">
+        <button id="no" type="button" aria-label="Otra">Otra</button>
+        <button id="yes" type="button" aria-label="Eso">Eso</button>
+      </div>
+      <section id="done" class="done" hidden></section>
+    </main>
+    <script src="js/script.js"></script>
+  </body>
+</html>

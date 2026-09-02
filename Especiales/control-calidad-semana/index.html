@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#f6f1e8" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <title>Control de calidad</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600;700&family=IBM+Plex+Serif:wght@600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/motion.css" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <!-- ?nombre=Brisa -->
+  </head>
+  <body>
+    <main class="rise">
+      <p class="brand">INFORME SEMANAL · CONFIDENCIAL</p>
+      <h1 id="title">Control de calidad de la semana</h1>
+      <p class="lead" id="lead"></p>
+
+      <form id="form">
+        <fieldset>
+          <legend>1. ¿Cuántas tazas de café necesitaste hoy para no colapsar?</legend>
+          <div class="row" id="cafes"></div>
+        </fieldset>
+
+        <fieldset>
+          <legend>2. Del 1 al 10, ¿qué tan soportable estuvo la gente hoy?</legend>
+          <input id="gente" type="range" min="1" max="10" value="5" />
+          <p class="range-val"><span id="genteN">5</span>/10</p>
+        </fieldset>
+
+        <fieldset>
+          <legend>3. ¿Qué necesitas urgente en este momento?</legend>
+          <label class="opt"><input type="radio" name="urge" value="siesta" required /> Una siesta de 12 horas</label>
+          <label class="opt"><input type="radio" name="urge" value="finde" /> Que el fin de semana empiece ya</label>
+          <label class="opt"><input type="radio" name="urge" value="meme" /> Un meme malo</label>
+        </fieldset>
+
+        <button type="submit">Enviar al laboratorio</button>
+      </form>
+
+      <section id="out" class="out" hidden></section>
+    </main>
+    <script src="js/script.js"></script>
+  </body>
+</html>

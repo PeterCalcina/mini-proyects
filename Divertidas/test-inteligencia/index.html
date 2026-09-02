@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#d8c49a" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <title>Test de Inteligencia Oficial</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600&family=Newsreader:opsz,wght@6..72,500;6..72,650&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/motion.css" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <!-- ?nombre=Brisa  |  ?nombres=Brisa,Violeta -->
+  </head>
+  <body>
+    <main class="sheet rise" id="app">
+      <header class="head">
+        <p class="stamp" id="stamp">CERTIFICADO Nº <span id="folio"></span></p>
+        <h1>Test de Inteligencia Imposible</h1>
+        <p class="greet" id="greet"></p>
+        <p class="hint">3 preguntas. Nivel: genio. Tiempo: el que te dé la gana.</p>
+        <div class="progress" aria-hidden="true">
+          <span id="p1"></span><span id="p2"></span><span id="p3"></span>
+        </div>
+      </header>
+
+      <section id="quiz" class="quiz"></section>
+      <section id="result" class="result" hidden></section>
+    </main>
+    <script src="js/script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,254 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+}
+
+body {
+  font-family: "Segoe UI", system-ui, sans-serif;
+  background: #0b0b0b;
+  color: #fff;
+}
+
+.gate {
+  min-height: 100dvh;
+  display: grid;
+  place-items: center;
+  background: #1f1f1f;
+  padding: max(16px, env(safe-area-inset-top)) 16px max(16px, env(safe-area-inset-bottom));
+}
+
+.win {
+  width: min(440px, 100%);
+  background: #2b2b2b;
+  border: 1px solid #3d3d3d;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.45);
+}
+
+.win-bar {
+  margin: 0;
+  padding: 8px 12px;
+  background: #1a1a1a;
+  font-size: 13px;
+}
+
+.win-body {
+  padding: 22px 20px 24px;
+}
+
+.win-body h1 {
+  margin: 0 0 10px;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.win-body p {
+  margin: 0 0 18px;
+  color: #cfcfcf;
+}
+
+#allow,
+#again {
+  border: 0;
+  background: #0067c0;
+  color: #fff;
+  min-height: 48px;
+  width: 100%;
+  padding: 12px 16px;
+  font: inherit;
+  cursor: pointer;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.panic {
+  min-height: 100dvh;
+  background: #0078d7;
+  padding: max(28px, env(safe-area-inset-top)) 20px max(20px, env(safe-area-inset-bottom));
+}
+
+.sad {
+  font-size: 4.5rem;
+  margin: 0 0 8px;
+  line-height: 1;
+}
+
+.panic h2 {
+  font-weight: 400;
+  font-size: 1.25rem;
+  max-width: 720px;
+  margin: 0 0 12px;
+}
+
+.mono {
+  font-family: Consolas, monospace;
+  opacity: 0.85;
+}
+
+.bar-wrap {
+  margin: 22px 0 8px;
+  height: 10px;
+  background: rgba(255, 255, 255, 0.25);
+  max-width: 480px;
+}
+
+.bar {
+  height: 100%;
+  width: 0;
+  background: #fff;
+}
+
+.pct {
+  margin: 0 0 18px;
+}
+
+.log {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-family: Consolas, monospace;
+  font-size: 13px;
+  max-width: 720px;
+  word-break: break-word;
+}
+
+.log li {
+  margin-bottom: 6px;
+  opacity: 0;
+  animation: in 0.25s forwards;
+}
+
+@keyframes in {
+  to {
+    opacity: 1;
+  }
+}
+
+.reveal {
+  min-height: 100dvh;
+  display: grid;
+  place-content: center;
+  text-align: center;
+  padding: max(24px, env(safe-area-inset-top)) 20px max(24px, env(safe-area-inset-bottom));
+  background: radial-gradient(circle at 50% 30%, #3b1d58, #12081c 70%);
+}
+
+.cat {
+  width: 140px;
+  height: 140px;
+  margin: 0 auto 16px;
+  animation: dance 0.38s infinite alternate;
+}
+
+.cat-head {
+  position: relative;
+  width: 90px;
+  height: 70px;
+  margin: 0 auto;
+  background: #f4c27a;
+  border-radius: 40% 40% 45% 45%;
+}
+
+.ear {
+  position: absolute;
+  top: -18px;
+  width: 0;
+  height: 0;
+  border-left: 16px solid transparent;
+  border-right: 16px solid transparent;
+  border-bottom: 28px solid #f4c27a;
+}
+
+.ear.l {
+  left: 4px;
+  transform: rotate(-18deg);
+}
+.ear.r {
+  right: 4px;
+  transform: rotate(18deg);
+}
+
+.eye {
+  position: absolute;
+  top: 28px;
+  width: 10px;
+  height: 14px;
+  background: #222;
+  border-radius: 50%;
+}
+
+.eye.l {
+  left: 24px;
+}
+.eye.r {
+  right: 24px;
+}
+
+.nose {
+  position: absolute;
+  left: 50%;
+  top: 44px;
+  width: 10px;
+  height: 7px;
+  background: #e07a6a;
+  border-radius: 50%;
+  transform: translateX(-50%);
+}
+
+.cat-body {
+  width: 70px;
+  height: 50px;
+  margin: -6px auto 0;
+  background: #efb45f;
+  border-radius: 40%;
+}
+
+@keyframes dance {
+  from {
+    transform: rotate(-12deg) translateX(-8px);
+  }
+  to {
+    transform: rotate(12deg) translateX(8px);
+  }
+}
+
+.reveal h2 {
+  font-family: "Sora", sans-serif;
+  font-size: 2rem;
+  margin: 0 0 8px;
+}
+
+.reveal p {
+  font-size: 1.1rem;
+  max-width: 28rem;
+  margin: 0 auto 18px;
+}
+
+#again {
+  background: #ffd24a;
+  color: #2a1600;
+  font-weight: 700;
+}
+
+@media (min-width: 600px) {
+  .sad {
+    font-size: 6rem;
+  }
+
+  .panic h2 {
+    font-size: 1.6rem;
+  }
+
+  #allow {
+    width: auto;
+  }
+}

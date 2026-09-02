@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#0f172a" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <title>Detallitos</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/theme.css" />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <main class="wrap">
+      <header class="hero rise">
+        <p class="kicker" id="hello">Hola</p>
+        <h1>Un pequeño rincón hecho para ti ✨</h1>
+        <p class="lead" id="lead">Cuatro rincones. El mismo cuidado.</p>
+      </header>
+      <nav class="grid" aria-label="Módulos">
+        <a class="glass card tap rise d1" id="t1" href="museo-favoritos/index.html">
+          <span class="gem g1" aria-hidden="true"></span>
+          <strong>El Museo de tus Favoritos</strong>
+          <small>Gemas de lo que me contaste: canción, café, gustos.</small>
+        </a>
+        <a class="glass card tap rise d2" id="t2" href="termometro-animo/index.html">
+          <span class="gem g2" aria-hidden="true"></span>
+          <strong>Termómetro de Ánimo</strong>
+          <small>Del 1 al 100. Confeti o una nota, según el día.</small>
+        </a>
+        <a class="glass card tap rise d3" id="t3" href="cajita-notas/index.html">
+          <span class="gem g3" aria-hidden="true"></span>
+          <strong>Cajita de Raspaditas</strong>
+          <small>Siete destapes. Una nota secreta por día.</small>
+        </a>
+        <a class="glass card tap rise d4" id="t4" href="reproductor-historias/index.html">
+          <span class="gem g4" aria-hidden="true"></span>
+          <strong>Música & Historias</strong>
+          <small>Canciones con la nota de por qué te recuerdan.</small>
+        </a>
+      </nav>
+      <p class="foot" id="foot">Lo dejé aquí por si un día no quieres hablar.</p>
+    </main>
+    <script>
+      const n = new URLSearchParams(location.search).get("nombre");
+      const quien = n || "Violeta";
+      document.getElementById("hello").textContent = `Hola, ${quien}`;
+      document.getElementById("lead").textContent =
+        "Un espacio quieto. Hecho para alegrarte el día, sin ruido.";
+      document.getElementById("foot").textContent =
+        `Lo dejé aquí por si un día no quieres hablar, ${quien}.`;
+      const q = `?nombre=${encodeURIComponent(quien)}`;
+      ["t1", "t2", "t3", "t4"].forEach((id) => {
+        document.getElementById(id).href += q;
+      });
+    </script>
+  </body>
+</html>

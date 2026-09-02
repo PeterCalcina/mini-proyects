@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#0d1a12" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <title>¿Quién paga hoy?</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Nunito:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/motion.css" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <!-- 1 a 1: ?nombre=Brisa&victima=Brisa  |  varias: ?nombres=A,B,C&victima=B -->
+  </head>
+  <body>
+    <main class="rise">
+      <p class="kicker">RULETA RUSA DE CUENTAS</p>
+      <h1 id="title">¿Quién paga hoy?</h1>
+      <p class="sub" id="sub"></p>
+
+      <div class="stage">
+        <div class="pointer" aria-hidden="true"></div>
+        <div class="wheel" id="wheel"></div>
+      </div>
+
+      <button id="spin" type="button">Girar</button>
+      <section id="boom" class="boom" hidden></section>
+    </main>
+    <script src="js/script.js"></script>
+  </body>
+</html>

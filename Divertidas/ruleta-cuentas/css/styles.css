@@ -1,0 +1,166 @@
+:root {
+  --felt: #0d1a12;
+  --gold: #f0c14b;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+}
+
+body {
+  min-height: 100dvh;
+  font-family: "Nunito", system-ui, sans-serif;
+  background:
+    radial-gradient(circle at 50% 20%, #1c3a28, var(--felt) 55%);
+  color: #f7efe0;
+  text-align: center;
+  padding: max(20px, env(safe-area-inset-top)) 16px
+    max(28px, env(safe-area-inset-bottom));
+}
+
+.kicker {
+  letter-spacing: 0.2em;
+  font-size: 12px;
+  color: var(--gold);
+  margin: 0;
+}
+
+h1 {
+  margin: 8px 0 6px;
+  font-size: 1.7rem;
+  font-family: "Cinzel", serif;
+}
+
+.sub {
+  opacity: 0.8;
+  margin: 0 0 22px;
+}
+
+.stage {
+  position: relative;
+  width: min(300px, 86vw);
+  height: min(300px, 86vw);
+  margin: 0 auto 22px;
+}
+
+.pointer {
+  position: absolute;
+  left: 50%;
+  top: -6px;
+  z-index: 3;
+  width: 0;
+  height: 0;
+  border-left: 14px solid transparent;
+  border-right: 14px solid transparent;
+  border-top: 28px solid var(--gold);
+  transform: translateX(-50%);
+  filter: drop-shadow(0 2px 0 #7a5a10);
+}
+
+.wheel {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 10px solid #2a1a0a;
+  box-shadow:
+    inset 0 0 0 8px #d4a017,
+    0 12px 0 #07140c;
+  position: relative;
+  overflow: hidden;
+  transition: transform 4.8s cubic-bezier(0.12, 0.82, 0.08, 1);
+}
+
+.wheel span {
+  color: #fff;
+  pointer-events: none;
+  white-space: nowrap;
+  font-weight: 700;
+  font-size: 0.92rem;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.45);
+}
+
+#spin,
+.again {
+  font: inherit;
+  font-size: 1.1rem;
+  width: min(300px, 86vw);
+  min-height: 48px;
+  padding: 12px 28px;
+  border: 0;
+  background: var(--gold);
+  color: #2a1a0a;
+  font-weight: 700;
+  cursor: pointer;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+  box-shadow: 0 4px 0 #8a6a14;
+}
+
+#spin:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.boom {
+  margin-top: 22px;
+}
+
+.boom h2 {
+  font-size: 1.7rem;
+  color: var(--gold);
+  margin: 0 0 8px;
+}
+
+@media (min-width: 600px) {
+  h1,
+  .boom h2 {
+    font-size: 2rem;
+  }
+
+  .stage,
+  #spin,
+  .again {
+    width: min(340px, 92vw);
+  }
+
+  .stage {
+    height: min(340px, 92vw);
+  }
+}
+
+.boom p {
+  margin: 0;
+  font-size: 1.15rem;
+}
+
+.confetti {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.confetti i {
+  position: absolute;
+  top: -10px;
+  width: 8px;
+  height: 14px;
+  animation: fall 2.4s linear forwards;
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(110vh) rotate(540deg);
+  }
+}

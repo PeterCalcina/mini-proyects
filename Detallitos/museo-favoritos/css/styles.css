@@ -1,0 +1,66 @@
+h1 {
+  margin: 0 0 8px;
+  font-size: 1.7rem;
+  line-height: 1.15;
+}
+
+.lead { margin: 0 0 20px; }
+
+.grid { display: grid; gap: 12px; }
+
+.ficha {
+  width: 100%;
+  text-align: left;
+  font: inherit;
+  color: inherit;
+  background: var(--glass);
+  border: 1px solid var(--stroke);
+  border-radius: var(--radius);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  padding: 16px;
+  min-height: 88px;
+  cursor: pointer;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+  transition: transform var(--ease), background var(--ease);
+}
+
+@media (hover: hover) {
+  .ficha:hover { transform: scale(1.02); }
+}
+
+.ficha:active { transform: scale(0.95); }
+
+.ficha .sala {
+  margin: 0 0 6px;
+  font-family: var(--heading);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--lilac);
+}
+
+.ficha h2 {
+  margin: 0;
+  font-size: 1.12rem;
+}
+
+.ficha .objeto,
+.ficha .nota {
+  margin: 8px 0 0;
+  display: none;
+}
+
+.ficha .nota { color: var(--muted); font-size: 0.95rem; }
+
+.ficha.open .objeto,
+.ficha.open .nota { display: block; }
+
+.ficha.reserva {
+  background: rgba(253, 230, 138, 0.06);
+  border-style: dashed;
+  border-color: rgba(253, 230, 138, 0.28);
+}
+
+.ficha.reserva h2 { color: var(--gold); }

@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#f4d7c3" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <title>Si tu día estuvo feo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Literata:opsz,wght@7..72,500;7..72,650&family=Nunito:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/motion.css" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <!-- ?nombre=Brisa -->
+  </head>
+  <body>
+    <main class="rise">
+      <p class="kicker" id="greet"></p>
+      <section id="start" class="start">
+        <h1>¿Día feo?</h1>
+        <p>No hay que explicarlo. Solo aprieta.</p>
+        <button id="go" type="button">Si tu día estuvo feo, presiona aquí</button>
+      </section>
+
+      <section id="shot" class="shot" hidden>
+        <article class="card" id="card"></article>
+        <p class="fact" id="fact">Fact check: Eres una persona increíble y este día no te define.</p>
+        <div class="actions">
+          <button id="again" type="button">Otro shot de ánimo</button>
+          <button id="treat" class="ghost" type="button" hidden>
+            Si nada de esto funcionó, reclama un café o helado pagado por mí
+          </button>
+        </div>
+      </section>
+
+      <section id="date" class="date" hidden></section>
+    </main>
+    <script src="js/fact-checks.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>

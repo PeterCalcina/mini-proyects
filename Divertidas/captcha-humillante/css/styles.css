@@ -1,0 +1,172 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+}
+
+body {
+  font-family: "Roboto", Arial, sans-serif;
+  background: #f5f5f5;
+  color: #202124;
+  min-height: 100dvh;
+  display: grid;
+  place-items: start center;
+  padding: max(16px, env(safe-area-inset-top)) 12px
+    max(20px, env(safe-area-inset-bottom));
+}
+
+.hello {
+  text-align: center;
+  margin: 0 0 14px;
+  color: #5f6368;
+}
+
+.wrap {
+  width: min(420px, 100%);
+}
+
+.captcha {
+  width: 100%;
+  background: #fff;
+  border: 1px solid #d3d3d3;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.captcha header {
+  background: #1a73e8;
+  color: #fff;
+  padding: 16px 18px 18px;
+}
+
+.captcha header p {
+  margin: 0 0 4px;
+  font-size: 14px;
+}
+
+.captcha header h1 {
+  margin: 0;
+  font-size: 1.45rem;
+  font-weight: 700;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6px;
+  padding: 6px;
+}
+
+.tile {
+  position: relative;
+  aspect-ratio: 1;
+  border: 0;
+  padding: 0;
+  background: #e8eaed;
+  cursor: pointer;
+  overflow: hidden;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.tile svg,
+.tile img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.tile.on {
+  outline: 3px solid #1a73e8;
+  outline-offset: -3px;
+}
+
+.tile.on::after {
+  content: "✓";
+  position: absolute;
+  left: 6px;
+  top: 6px;
+  width: 22px;
+  height: 22px;
+  background: #1a73e8;
+  color: #fff;
+  font-size: 14px;
+  display: grid;
+  place-items: center;
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 10px;
+  padding: 10px 12px 12px;
+  border-top: 1px solid #eee;
+}
+
+.status {
+  margin: 0;
+  font-size: 13px;
+  color: #d93025;
+  min-height: 1.2em;
+}
+
+#verify,
+.again {
+  border: 0;
+  background: #1a73e8;
+  color: #fff;
+  min-height: 48px;
+  padding: 12px 16px;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.pass {
+  width: 100%;
+  margin-top: 16px;
+  background: #fff;
+  border: 1px solid #d3d3d3;
+  padding: 18px;
+  text-align: center;
+}
+
+.pass h2 {
+  margin: 0 0 8px;
+}
+
+.again {
+  margin-top: 12px;
+  width: 100%;
+  border: 1px solid #dadce0;
+  background: #fff;
+  color: #202124;
+}
+
+@media (min-width: 600px) {
+  body {
+    place-items: center;
+  }
+
+  footer {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  #verify {
+    width: auto;
+  }
+}

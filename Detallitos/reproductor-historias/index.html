@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#0f172a" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <title>Reproductor</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <!-- ?nombre=Violeta -->
+  </head>
+  <body>
+    <main class="wrap rise">
+      <a class="back" id="back" href="../index.html">← El rincón</a>
+      <p class="kicker" id="coverTitle"></p>
+      <div class="deck glass">
+        <div class="vinyl" id="vinyl" aria-hidden="true"><i></i></div>
+        <div class="now">
+          <p class="label">Ahora suena</p>
+          <h1 id="trackTitle">Elige un momento</h1>
+          <p id="trackArtist" class="artist">Playlist personal</p>
+        </div>
+      </div>
+      <p class="note glass" id="note">Cada pista es un rato que me acordé de ti.</p>
+      <ol id="list" class="list glass"></ol>
+    </main>
+    <script src="js/tracks.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>

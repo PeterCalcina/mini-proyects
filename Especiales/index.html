@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#f3e4d4" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <title>Especiales</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Nunito:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/motion.css" />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <main>
+      <p class="kicker rise">Para ti</p>
+      <h1 class="rise d1">Especiales</h1>
+      <p class="lead rise d1" id="lead">Tres páginas suaves. Para un día raro, no para un show.</p>
+      <nav>
+        <a class="card rise d1" id="t1" href="generador-dias-malos/index.html">
+          <span class="icon n1" aria-hidden="true">☀</span>
+          <span>
+            <strong>Generador de días malos</strong>
+            <small>Un subidón. Si nada pega, hay café o helado.</small>
+          </span>
+        </a>
+        <a class="card rise d2" id="t2" href="flashcards-decisiones/index.html">
+          <span class="icon n2" aria-hidden="true">◇</span>
+          <span>
+            <strong>Flashcards de decisiones</strong>
+            <small>Cuando no sabes qué hacer. Desliza y listo.</small>
+          </span>
+        </a>
+        <a class="card rise d3" id="t3" href="control-calidad-semana/index.html">
+          <span class="icon n3" aria-hidden="true">✎</span>
+          <span>
+            <strong>Control de calidad</strong>
+            <small>Tres preguntas tontas. Una recomendación en serio.</small>
+          </span>
+        </a>
+      </nav>
+      <p class="foot" id="foot">Lo dejé aquí por si un día no quieres hablar.</p>
+    </main>
+    <script>
+      const n = new URLSearchParams(location.search).get("nombre");
+      const quien = n || (Math.random() < 0.5 ? "Brisa" : "Violeta");
+      document.getElementById("lead").textContent =
+        `Hola, ${quien}. Esto es solo para ti.`;
+      document.getElementById("foot").textContent =
+        `Lo dejé aquí por si un día no quieres hablar, ${quien}.`;
+      const q = `?nombre=${encodeURIComponent(quien)}`;
+      ["t1", "t2", "t3"].forEach((id) => {
+        document.getElementById(id).href += q;
+      });
+    </script>
+  </body>
+</html>
