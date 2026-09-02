@@ -7,7 +7,7 @@ function pickName() {
         .split(",")
         .map((s) => s.trim())
         .filter(Boolean)
-    : ["Brisa", "Violeta"];
+    : ["Violeta"];
   return pool[Math.floor(Math.random() * pool.length)];
 }
 
