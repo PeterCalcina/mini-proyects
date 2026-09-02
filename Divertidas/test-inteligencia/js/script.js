@@ -3,7 +3,10 @@ const qs = new URLSearchParams(location.search);
 function pickName() {
   const raw = qs.get("nombre") || qs.get("nombres");
   const pool = raw
-    ? raw.split(",").map((s) => s.trim()).filter(Boolean)
+    ? raw
+        .split(",")
+        .map((s) => s.trim())
+        .filter(Boolean)
     : ["Brisa", "Violeta"];
   return pool[Math.floor(Math.random() * pool.length)];
 }
@@ -60,6 +63,78 @@ const BANCO = [
     ok: "0",
     twist: "shrink",
   },
+  {
+    q: "How do you say 'Perro' in English?",
+    opts: ["Dog", "Cat", "Firulais", "El de la esquina"],
+    ok: "Dog",
+    twist: "dodge",
+  },
+  {
+    q: "¿Cuál es la capital de Francia?",
+    opts: ["París", "Torre Eiffel", "Croissant", "Europa"],
+    ok: "París",
+    twist: "tomato",
+  },
+  {
+    q: "¿Qué animal produce leche?",
+    opts: ["La vaca", "El lechero", "El supermercado", "El almendro"],
+    ok: "La vaca",
+    twist: "shrink",
+  },
+  {
+    q: "Traduce: 'I love you'?",
+    opts: ["Te amo", "Tengo frío", "Un café por favor", "Te debo dinero"],
+    ok: "Te amo",
+    twist: "dodge",
+  },
+  {
+    q: "¿Qué gas necesitamos para respirar?",
+    opts: ["Oxígeno", "Aire fresco", "Wifi", "Chisme"],
+    ok: "Oxígeno",
+    twist: "shrink",
+  },
+  {
+    q: "¿Cuántos meses tienen 28 días?",
+    opts: ["Todos", "Solo Febrero", "Ninguno", "Los de año bisiesto"],
+    ok: "Todos",
+    twist: "tomato",
+  },
+  {
+    q: "¿En qué continente está Japón?",
+    opts: ["Asia", "En el mapa", "Cerca del anime", "Lejos"],
+    ok: "Asia",
+    twist: "dodge",
+  },
+  {
+    q: "¿Qué sonido hace un gato?",
+    opts: ["Miau", "Dame comida", "Ostracismo", "El de las 3 AM"],
+    ok: "Miau",
+    twist: "shrink",
+  },
+  {
+    q: "¿Cuál es el color del caballo blanco de Napoleón?",
+    opts: ["Blanco", "Gris sucio", "Inexistente", "Napoleón"],
+    ok: "Blanco",
+    twist: "tomato",
+  },
+  {
+    q: "Cual es el opuesto de 'Big'?",
+    opts: ["Small", "Chiquito", "Medium", "Enano"],
+    ok: "Small",
+    twist: "dodge",
+  },
+  {
+    q: "¿Cuál es la capital de Italia?",
+    opts: ["Roma", "Pizza", "Spaghetti", "Milán"],
+    ok: "Roma",
+    twist: "shrink",
+  },
+  {
+    q: "¿Qué planeta es conocido como el Planeta Rojo?",
+    opts: ["Marte", "El del picante", "Júpiter", "El Sol"],
+    ok: "Marte",
+    twist: "tomato",
+  },
 ];
 
 function shuffle(arr) {
@@ -77,7 +152,7 @@ let fallos = 0;
 
 document.getElementById("folio").textContent = folio;
 document.getElementById("greet").textContent =
-  `Hola, ${nombre}. Esto decide si te mereces un diploma… o una corneta.`;
+  `Hola, ${nombre}. Esto decide si te mereces un diploma… o un cocacho.`;
 
 function honk() {
   const ctx = new AudioContext();
@@ -90,7 +165,10 @@ function honk() {
     const g = ctx.createGain();
     o.type = type;
     o.frequency.setValueAtTime(freq, ctx.currentTime + start);
-    o.frequency.exponentialRampToValueAtTime(freq * 0.45, ctx.currentTime + start + dur);
+    o.frequency.exponentialRampToValueAtTime(
+      freq * 0.45,
+      ctx.currentTime + start + dur,
+    );
     g.gain.setValueAtTime(0.95, ctx.currentTime + start);
     g.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + start + dur);
     o.connect(g);
@@ -173,7 +251,9 @@ function render() {
     </article>
   `;
 
-  const okBtn = [...quiz.querySelectorAll("button.opt")].find((b) => b.dataset.v === item.ok);
+  const okBtn = [...quiz.querySelectorAll("button.opt")].find(
+    (b) => b.dataset.v === item.ok,
+  );
   let cheated = false;
   let lock = false;
 
@@ -203,7 +283,7 @@ function render() {
         lock = false;
       }, 320);
     },
-    { capture: true }
+    { capture: true },
   );
 
   quiz.querySelectorAll("button.opt").forEach((btn) => {
@@ -244,7 +324,7 @@ function failScreen() {
   result.innerHTML = `
     <h2>REPROBADO</h2>
     <p>Hola de nuevo, ${nombre}. CI estimado: <strong>${score}</strong>.</p>
-    <p>Eso no es un número. Es una corneta. Gracias por participar.</p>
+    <p>Eso no es un número. Es un cocacho. Gracias por participar.</p>
     <button class="again" type="button">Repetir el sufrimiento</button>
   `;
   result.querySelector(".again").onclick = () => location.reload();
